@@ -1,0 +1,205 @@
+{
+  "info": {
+    "_postman_id": "8f47f2ac-ed47-4fb0-9b37-8dbffea45544",
+    "name": "JWTTokenExample",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "29566523"
+  },
+  "item": [
+    {
+      "name": "Login",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTcyNzU3ODgsImlzcyI6InlvdXRDb21wYW55SXNzdWVyLmNvbSIsImF1ZCI6InlvdXRDb21wYW55SXNzdWVyLmNvbSJ9.GS23rWM10bd3W5-s2BvotdUuue_mL7vvfx79OtGjtnw"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"username\" : \"validUser\",\r\n    \"password\" : \"validPassword\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://localhost:7245/api/Login",
+          "protocol": "https",
+          "host": [
+            "localhost"
+          ],
+          "port": "7245",
+          "path": [
+            "api",
+            "Login"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "https://localhost:7245/api/Login",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTcyNzU3ODgsImlzcyI6InlvdXRDb21wYW55SXNzdWVyLmNvbSIsImF1ZCI6InlvdXRDb21wYW55SXNzdWVyLmNvbSJ9.GS23rWM10bd3W5-s2BvotdUuue_mL7vvfx79OtGjtnw"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"username\" : \"validUser\",\r\n    \"password\" : \"validPassword\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://localhost:7245/api/Login",
+              "protocol": "https",
+              "host": [
+                "localhost"
+              ],
+              "port": "7245",
+              "path": [
+                "api",
+                "Login"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Date",
+              "value": "Sat, 01 Jun 2024 19:12:26 GMT"
+            },
+            {
+              "key": "Server",
+              "value": "Kestrel"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTcyNzYzNDYsImlzcyI6InlvdXRDb21wYW55SXNzdWVyLmNvbSIsImF1ZCI6InlvdXRDb21wYW55SXNzdWVyLmNvbSJ9.0V59K1GAO2YQSS8N8anc_fY825CiWO8yuhurS77CgyI\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "TestAuthorization",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTcyNzYzNDYsImlzcyI6InlvdXRDb21wYW55SXNzdWVyLmNvbSIsImF1ZCI6InlvdXRDb21wYW55SXNzdWVyLmNvbSJ9.0V59K1GAO2YQSS8N8anc_fY825CiWO8yuhurS77CgyI"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://localhost:7245/api/HelloWorld",
+          "protocol": "https",
+          "host": [
+            "localhost"
+          ],
+          "port": "7245",
+          "path": [
+            "api",
+            "HelloWorld"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "https://localhost:7245/api/HelloWorld",
+          "originalRequest": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTcyNzYzNDYsImlzcyI6InlvdXRDb21wYW55SXNzdWVyLmNvbSIsImF1ZCI6InlvdXRDb21wYW55SXNzdWVyLmNvbSJ9.0V59K1GAO2YQSS8N8anc_fY825CiWO8yuhurS77CgyI"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://localhost:7245/api/HelloWorld",
+              "protocol": "https",
+              "host": [
+                "localhost"
+              ],
+              "port": "7245",
+              "path": [
+                "api",
+                "HelloWorld"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "plain",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain; charset=utf-8"
+            },
+            {
+              "key": "Date",
+              "value": "Sat, 01 Jun 2024 19:13:28 GMT"
+            },
+            {
+              "key": "Server",
+              "value": "Kestrel"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            }
+          ],
+          "cookie": [],
+          "body": "Hello World"
+        }
+      ]
+    }
+  ]
+}

@@ -3,7 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.34929.205
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNet6.JwtTokenExample", "DotNet6.JwtTokenExample.csproj", "{388981E4-9420-4EAD-9469-4951A857DE57}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNet6.JwtTokenExample", "DotNet6.JwtTokenExample.csproj", "{388981E4-9420-4EAD-9469-4951A857DE57}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{FB815670-1CEE-4866-829C-7211823217FF}"
+	ProjectSection(SolutionItems) = preProject
+		JwtTokenExample.PostmanCollection.json = JwtTokenExample.PostmanCollection.json
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
