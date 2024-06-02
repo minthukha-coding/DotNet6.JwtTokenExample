@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
 using System.Text;
 
 namespace DotNet6.JwtTokenExample.Controllers.Login
@@ -42,15 +43,22 @@ namespace DotNet6.JwtTokenExample.Controllers.Login
             return username == "validUser" && password == "validPassword";
         }
 
-        private string GenerateJwtToken()
+        private string GenerateJwtToken(LoginRequest reqModel)
         {
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
 
+            var clamis = new List<Claim>
+            {
+                new Claim(JwtRegisteredClaimNames.UniqueName, reqModel.Username),
+                new Claim(JwtRegisteredClaimNames.CHash, reqModel.Password),
+                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
+            };
+
             var token = new JwtSecurityToken(
                 issuer: _config["Jwt:Issuer"],
                 audience: _config["Jwt:Issuer"],
-                claims: null,
+                claims: clamis,
                 expires: DateTime.Now.AddMinutes(120),
                 signingCredentials: credentials
             );
