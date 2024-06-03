@@ -27,7 +27,7 @@ namespace DotNet6.JwtTokenExample.Controllers.Login
             // Implement your logic for verifying username and password
             if (IsValidUser(loginRequest.Username, loginRequest.Password))
             {
-                var token = GenerateJwtToken();
+                var token = GenerateJwtToken(loginRequest);
                 return Ok(new { Token = token });
             }
             else
